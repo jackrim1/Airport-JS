@@ -5,12 +5,17 @@ describe('Feature Test:', function() {
 	var airport;
 
 	beforeEach(function(){
-		plane = Plane();
-		airport = Airport();
+		plane = new Plane();
+		airport = new Airport();
 	});
 
 	it('planes are being instructed to land at the airport', function() {
 		plane.land(airport);
-		expect(aiport.planes()).toContain(plane);
+		expect(airport.planes()).toContain(plane);
+	});
+	it('planes are being instructed to take off from an airport', function() {
+		plane.land(airport);
+		plane.takeOff();
+		expect(airport.planes()).not.toContain(plane);
 	});
 });
